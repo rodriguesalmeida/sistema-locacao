@@ -16,11 +16,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import {MatInputModule} from '@angular/material/input';
 import {FlexLayoutModule } from '@angular/flex-layout';
+import { CategoriaCadastroComponent } from './pages/categoria/categoria-cadastro/categoria-cadastro.component';
 @NgModule({
   declarations: [
     AppComponent,
     RecursoCadastroComponent,
-    HomeComponent
+    HomeComponent,
+    CategoriaCadastroComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { AbstractEntity } from './abstractentity';
 
-export class Recurso extends AbstractEntity{
+export class Categoria extends AbstractEntity {
+    
     public nome:string;
-    public descricao:string;
 
 }

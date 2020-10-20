@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { AbstractService } from './abstract.service';
-import { Recurso } from '../models/recurso';
+import { Categoria } from '../models/categoria';
 
 @Injectable()
-export class RecursoService extends AbstractService<Recurso> {
+export class CategoriaService extends AbstractService<Categoria> {
 
     
     constructor(protected http:HttpClient){
@@ -13,6 +12,6 @@ export class RecursoService extends AbstractService<Recurso> {
     }
 
     public getPath(){
-        return "recurso";
+        return "categoria";
     }
 }
