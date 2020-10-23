@@ -29,4 +29,8 @@ export abstract class AbstractService<T extends AbstractEntity> {
         return this.http.get<T>(this.getUrl(`${id}`));
     }
 
+    public buscarTodos():Observable<Array<T>> {
+        return this.http.get<Array<T>>(this.getUrl(``));
+    }
+
 }
