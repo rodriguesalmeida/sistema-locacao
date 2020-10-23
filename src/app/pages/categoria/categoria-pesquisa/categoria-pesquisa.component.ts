@@ -14,7 +14,7 @@ import { CategoriaService } from 'src/app/services/categoria.service';
   ]
 })
 export class CategoriaPesquisaComponent implements OnInit {
-  public displayedColumns:any[] = ['id','nome'];
+  public displayedColumns:any[] = ['id','nome', 'acoes'];
   public dataSource:MatTableDataSource<Categoria> = new MatTableDataSource();
   public form:FormGroup = new FormGroup({
     pesquisar:new FormControl('')
@@ -29,11 +29,27 @@ export class CategoriaPesquisaComponent implements OnInit {
   }
 
   public pesquisar(){
-    
+    let nome = this.form.controls['pesquisar'].value;
+    this.categoriaService.buscarPorNome(nome).subscribe((lista)=>{
+      this.dataSource = new MatTableDataSource(lista);
+    })
   }
 
   public novo(){
     this.router.navigate(['categoria/cadastro']);
   }
 
+  public alterar(categoria:Categoria){
+    this.router.navigate(['categoria/cadastro', categoria]);
+  }
+
+  public excluir(categoria:Categoria){
+    this.categoriaService.excluir(categoria.id).subscribe(()=>{
+      alert('Removido!');
+      this.pesquisar();
+      
+    }, err =>{
+      console.log('Falha ao Excluir', err);
+    })
+  }
 }
