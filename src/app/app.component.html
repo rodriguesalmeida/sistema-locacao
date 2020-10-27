@@ -5,10 +5,20 @@
     <button mat-menu-item routerLink="recurso/cadastro">Cadastrar</button>
     <button mat-menu-item routerLink="recurso/pesquisa">Pesquisar</button>
   </mat-menu>
-  <button mat-button [matMenuTriggerFor]="menu">Categoria</button>
-  <mat-menu #menu="matMenu">
+  <button mat-button [matMenuTriggerFor]="menuCategoria">Categoria</button>
+  <mat-menu #menuCategoria="matMenu">
     <button mat-menu-item routerLink="categoria/cadastro">Cadastrar</button>
     <button mat-menu-item routerLink="categoria/pesquisa">Pesquisar</button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="menuUsuario">Usuário</button>
+  <mat-menu #menuUsuario="matMenu">
+    <button mat-menu-item routerLink="usuario/cadastro">Cadastrar</button>
+    <button mat-menu-item routerLink="usuario/pesquisa">Pesquisar</button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="menuLocacao">Locação</button>
+  <mat-menu #menuLocacao="matMenu">
+    <button mat-menu-item routerLink="locacao/cadastro">Cadastrar</button>
+    <button mat-menu-item routerLink="locacao/pesquisa">Pesquisar</button>
   </mat-menu>
 </mat-toolbar>
 <router-outlet></router-outlet>

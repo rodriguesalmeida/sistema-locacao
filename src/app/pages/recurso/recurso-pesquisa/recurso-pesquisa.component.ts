@@ -8,7 +8,10 @@ import { RecursoService } from 'src/app/services/recurso.service';
 @Component({
   selector: 'app-recurso-pesquisa',
   templateUrl: './recurso-pesquisa.component.html',
-  styleUrls: ['./recurso-pesquisa.component.scss']
+  styleUrls: ['./recurso-pesquisa.component.scss'],
+  providers:[
+    RecursoService
+  ]
 })
 export class RecursoPesquisaComponent implements OnInit {
 
