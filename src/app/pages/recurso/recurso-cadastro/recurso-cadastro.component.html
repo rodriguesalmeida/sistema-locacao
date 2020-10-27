@@ -12,8 +12,13 @@
             <mat-form-field>
                 <input matInput placeholder="Nome" formControlName="nome">
             </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Descrição" formControlName="descricao">
+            <mat-form-field >
+                <mat-label>Categoria</mat-label>
+                <mat-select formControlName="categoria" [compareWith]="compareCategoria">
+                  <mat-option *ngFor="let cat of categorias" [value]="cat">
+                    {{cat.nome}}
+                  </mat-option>
+                </mat-select>
             </mat-form-field>
         </form>
     </mat-card-content>

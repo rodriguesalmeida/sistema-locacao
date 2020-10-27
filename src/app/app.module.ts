@@ -16,16 +16,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import {MatInputModule} from '@angular/material/input';
 import {FlexLayoutModule } from '@angular/flex-layout';
+import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import { CategoriaCadastroComponent } from './pages/categoria/categoria-cadastro/categoria-cadastro.component';
 import { CategoriaPesquisaComponent } from './pages/categoria/categoria-pesquisa/categoria-pesquisa.component';
+import { RecursoPesquisaComponent } from './pages/recurso/recurso-pesquisa/recurso-pesquisa.component';
 @NgModule({
   declarations: [
     AppComponent,
     RecursoCadastroComponent,
     HomeComponent,
     CategoriaCadastroComponent,
-    CategoriaPesquisaComponent
+    CategoriaPesquisaComponent,
+    RecursoPesquisaComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { CategoriaPesquisaComponent } from './pages/categoria/categoria-pesquisa
     ReactiveFormsModule,
     MatInputModule,
     FlexLayoutModule,
+    MatSelectModule,
     FormsModule,
     CommonModule,
     MatTableModule,
