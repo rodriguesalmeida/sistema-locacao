@@ -63,7 +63,7 @@ export class LocacaoCadastroComponent implements OnInit {
     this.locacao = this.form.value;
   }
 
-  public montarForm(locacao){
+  public montarForm(locacao:Locacao){
     this.locacao = locacao;
     this.form.patchValue(locacao);
   }
