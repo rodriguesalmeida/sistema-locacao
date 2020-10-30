@@ -16,7 +16,7 @@ export class LocacaoService extends AbstractService<Locacao> {
         return "locacao";
     }
 
-    public buscarPorNome(nome:string):Observable<Array<Locacao>> {
+    public buscarPorNome(nome:string):Observable<Locacao[]> {
         return this.http.post<Array<Locacao>>(this.getUrl('nome'), nome);
     }
 }
