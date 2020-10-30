@@ -79,4 +79,12 @@ export class LocacaoCadastroComponent implements OnInit {
     })
   }
 
+  compareUsuario(user1:Usuario, user2:Usuario){
+    return user1 && user2 && user1.id == user2.id;
+  }
+
+  compareRecurso(obj:Recurso, obj2:Recurso){
+    return obj && obj2 && obj.id == obj2.id;
+  }
+
 }
