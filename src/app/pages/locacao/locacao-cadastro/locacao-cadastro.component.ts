@@ -22,6 +22,8 @@ export class LocacaoCadastroComponent implements OnInit {
     id:new FormControl(),
     recurso:new FormControl(),
     usuario:new FormControl(),
+    idRecurso:new FormControl(),
+    idUsuario:new FormControl(),
     dataCadastro:new FormControl(),
     dataLocacao:new FormControl(),
     dataDevolucao:new FormControl(),
@@ -36,24 +38,27 @@ export class LocacaoCadastroComponent implements OnInit {
 
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.getRecursos();
+    await this.getUsuarios();
     this.route.params.subscribe((loc)=>{
       if (loc){
-        this.locacao = loc as Locacao;
-        this.montarForm(this.locacao);
+        this.locacaoService.buscarPorId(loc.id).subscribe((locacao)=>{
+          this.locacao = locacao;
+          this.montarForm(this.locacao);
+        })
       }
     });
-    this.getRecursos();
-    this.getUsuarios();
+    
   }
 
-  public getRecursos(){
+  public async getRecursos(){
     this.recursoService.buscarTodos().subscribe((lista)=>{
       this.recursos = lista;
     });
   }
 
-  public getUsuarios(){
+  public async getUsuarios(){
     this.usuarioService.buscarTodos().subscribe((lista)=>{
       this.usuarios = lista;
     })
@@ -65,7 +70,15 @@ export class LocacaoCadastroComponent implements OnInit {
 
   public montarForm(locacao:Locacao){
     this.locacao = locacao;
-    this.form.patchValue(locacao);
+    // this.form.setValue(locacao);
+    this.form.controls['id'].setValue(locacao.id);
+    this.form.controls['recurso'].setValue(locacao.recurso);
+    this.form.controls['usuario'].setValue(locacao.usuario);
+    this.form.controls['dataCadastro'].setValue(new Date(locacao.dataCadastro));
+    this.form.controls['dataDevolucao'].setValue(new Date(locacao.dataDevolucao));
+    this.form.controls['dataLocacao'].setValue(new Date(locacao.dataLocacao));
+    this.form.controls['situacao'].setValue(locacao.situacao);
+
   }
 
   public salvar(){

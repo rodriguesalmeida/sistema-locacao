@@ -26,6 +26,7 @@ import { UsuarioCadastroComponent } from './pages/usuario/usuario-cadastro/usuar
 import { UsuarioPesquisaComponent } from './pages/usuario/usuario-pesquisa/usuario-pesquisa.component';
 import { LocacaoPesquisaComponent } from './pages/locacao/locacao-pesquisa/locacao-pesquisa.component';
 import { LocacaoCadastroComponent } from './pages/locacao/locacao-cadastro/locacao-cadastro.component';
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,7 @@ import { LocacaoCadastroComponent } from './pages/locacao/locacao-cadastro/locac
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatNativeDateModule,
     MatDatepickerModule,
     FlexLayoutModule,
     MatSelectModule,

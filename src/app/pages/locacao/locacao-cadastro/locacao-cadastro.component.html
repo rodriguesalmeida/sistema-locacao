@@ -28,30 +28,32 @@
             <mat-form-field >
                 <mat-label>Situação</mat-label>
                 <mat-select formControlName="situacao">
-                  <mat-option value="1">Disponivel</mat-option>
-                  <mat-option value="2">Reservado</mat-option>
-                  <mat-option value="3">Alocado</mat-option>
-                  <mat-option value="4">Devolvido</mat-option>
+                  <mat-option [value]="1">Disponivel</mat-option>
+                  <mat-option [value]="2">Reservado</mat-option>
+                  <mat-option [value]="3">Alocado</mat-option>
+                  <mat-option [value]="4">Devolvido</mat-option>
                 </mat-select>
             </mat-form-field>
-            <mat-form-field >
-                <mat-label>Data Cadastro</mat-label>
-                <input matInput [matDatepicker]="pickerCadastro" formControlName="dataCadastro">
-                <mat-datepicker-toggle matSuffix [for]="pickerCadastro"></mat-datepicker-toggle>
-                <mat-datepicker #pickerCadastro></mat-datepicker>
-            </mat-form-field>
-            <mat-form-field >
-                <mat-label>Data Locação</mat-label>
-                <input matInput [matDatepicker]="pickerLocacao" formControlName="dataLocacao">
-                <mat-datepicker-toggle matSuffix [for]="pickerLocacao"></mat-datepicker-toggle>
-                <mat-datepicker #pickerLocacao></mat-datepicker>
-            </mat-form-field>
-            <mat-form-field >
-                <mat-label>Data Devolução</mat-label>
-                <input matInput [matDatepicker]="pickerDevolucao" formControlName="dataDevolucao">
-                <mat-datepicker-toggle matSuffix [for]="pickerDevolucao"></mat-datepicker-toggle>
-                <mat-datepicker #pickerDevolucao></mat-datepicker>
-            </mat-form-field>
+            <div fxLayout="row" fxLayoutGap="16px">
+                <mat-form-field fxFlex>
+                    <mat-label>Data Cadastro</mat-label>
+                    <input matInput [matDatepicker]="pickerCadastro" formControlName="dataCadastro">
+                    <mat-datepicker-toggle matSuffix [for]="pickerCadastro"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerCadastro></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field  fxFlex>
+                    <mat-label>Data Locação</mat-label>
+                    <input matInput [matDatepicker]="pickerLocacao" formControlName="dataLocacao">
+                    <mat-datepicker-toggle matSuffix [for]="pickerLocacao"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerLocacao></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field  fxFlex>
+                    <mat-label>Data Devolução</mat-label>
+                    <input matInput [matDatepicker]="pickerDevolucao" formControlName="dataDevolucao">
+                    <mat-datepicker-toggle matSuffix [for]="pickerDevolucao"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerDevolucao></mat-datepicker>
+                </mat-form-field>
+            </div>
         </form>
     </mat-card-content>
     <mat-card-actions>

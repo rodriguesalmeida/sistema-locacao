@@ -3,7 +3,7 @@ import { Recurso } from './recurso';
 import { Usuario } from './usuario';
 
 export class Locacao extends AbstractEntity{
-    public dataCadatro:Date;
+    public dataCadastro:Date;
     public dataLocacao:Date;
     public dataDevolucao:Date;
     public recurso:Recurso;

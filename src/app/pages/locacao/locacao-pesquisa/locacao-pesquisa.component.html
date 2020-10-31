@@ -35,6 +35,18 @@
                 <th mat-header-cell *matHeaderCellDef>Usuário </th>
                 <td mat-cell *matCellDef="let element"> {{element?.usuario?.nome}} </td>
             </ng-container>
+            <ng-container matColumnDef="situacao">
+                <th mat-header-cell *matHeaderCellDef>Situação </th>
+                <td mat-cell *matCellDef="let element"> 
+                    {{element.situacao}}
+                    <!-- <div [ngSwitch]="element.situacao">
+                        <div [ngSwitchCase]="1">Disponível</div>
+                        <div [ngSwitchCase]="2">Reservado</div>
+                        <div [ngSwitchCase]="3">Locado</div>
+                        <div [ngSwitchCase]="4">Devolvido</div>
+                    </div> -->
+                </td>
+            </ng-container>
             <ng-container matColumnDef="acoes">
                 <th mat-header-cell *matHeaderCellDef> Ações </th>
                 <td mat-cell *matCellDef="let element"> 
