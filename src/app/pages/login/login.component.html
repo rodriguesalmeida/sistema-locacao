@@ -1,0 +1,12 @@
+<form [formGroup]="form">
+    <div fxLayout="column" class="div-login" fxLayoutGap="16px">
+        <h2>Login do Sistema</h2>
+        <mat-form-field>
+            <input matInput placeholder="Usuário" formControlName="email" type="email">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Senha" formControlName="senha" type="password">
+        </mat-form-field>
+        <button mat-raised-button (click)="logar()">Logar</button>
+    </div>
+</form>

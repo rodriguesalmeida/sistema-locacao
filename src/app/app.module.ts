@@ -12,8 +12,8 @@ import { HomeComponent } from './pages/home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CommonModule, APP_BASE_HREF } from '@angular/common';
 import {MatInputModule} from '@angular/material/input';
 import {FlexLayoutModule } from '@angular/flex-layout';
 import {MatSelectModule} from '@angular/material/select';
@@ -27,6 +27,9 @@ import { UsuarioPesquisaComponent } from './pages/usuario/usuario-pesquisa/usuar
 import { LocacaoPesquisaComponent } from './pages/locacao/locacao-pesquisa/locacao-pesquisa.component';
 import { LocacaoCadastroComponent } from './pages/locacao/locacao-cadastro/locacao-cadastro.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { LoginComponent } from './pages/login/login.component';
+import { TokenInterceptor } from './services/tokenInterceptor';
+import { Router } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +41,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     UsuarioCadastroComponent,
     UsuarioPesquisaComponent,
     LocacaoPesquisaComponent,
-    LocacaoCadastroComponent
+    LocacaoCadastroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +64,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatButtonModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    { provide:APP_BASE_HREF, useValue:'/'},
+    {provide:HTTP_INTERCEPTORS, useClass:TokenInterceptor,multi:true, deps:[Router]}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,6 +9,7 @@ import { UsuarioCadastroComponent } from './pages/usuario/usuario-cadastro/usuar
 import { RecursoPesquisaComponent } from './pages/recurso/recurso-pesquisa/recurso-pesquisa.component';
 import { LocacaoCadastroComponent } from './pages/locacao/locacao-cadastro/locacao-cadastro.component';
 import { LocacaoPesquisaComponent } from './pages/locacao/locacao-pesquisa/locacao-pesquisa.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,10 @@ const routes: Routes = [
     path:'',
     redirectTo:'home',
     pathMatch:'full'
+  },
+  {
+    path:'login',
+    component:LoginComponent
   },
   {
     path:'recurso/cadastro',

@@ -5,5 +5,6 @@ export class Usuario extends AbstractEntity{
     public email:string;
     public celular:string;
     public senha:string;
+    public token:string;
 
 }
